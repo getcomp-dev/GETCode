@@ -13,13 +13,13 @@ int main(int argc, char const *argv[])
         if (N == 0 && M == 0)
             break;
 
-        int quantCopied = 0;
-        bool found[N];
-        bool copied[N];
+        int quantCopiado = 0;
+        bool encontrado[N];
+        bool copiado[N];
         for (int j = 0; j < N; ++j)
         {
-            found[j] = false;
-            copied[j] = false;
+            encontrado[j] = false;
+            copiado[j] = false;
         }
 
         int T;
@@ -28,18 +28,18 @@ int main(int argc, char const *argv[])
             cin >> T;
             T = T - 1;
 
-            if (found[T])
+            if (encontrado[T])
             {
-                if(!copied[T])
+                if(!copiado[T])
                 {
-                    copied[T] = true;
-                    quantCopied++;
+                    copiado[T] = true;
+                    quantCopiado++;
                 }
             }
-            found[T] = true;
+            encontrado[T] = true;
         }
 
-        cout << quantCopied << endl;
+        cout << quantCopiado << endl;
     }
 
     return 0;

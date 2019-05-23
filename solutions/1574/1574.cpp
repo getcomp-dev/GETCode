@@ -15,29 +15,29 @@ int main(int argc, char const *argv[])
         cin >> N;
         cin.ignore();
 
-        int history[N];
+        int historico[N];
         for (int j = 0; j < N; ++j)
         {
-            int direction = 0;
+            int direcao = 0;
 
-            string instruction;
-            getline(cin, instruction);
+            string instrucao;
+            getline(cin, instrucao);
 
-            if (instruction[0] == 'L')
-                direction = -1;
+            if (instrucao[0] == 'L')
+                direcao = -1;
 
-            if (instruction[0] == 'R')
-                direction = 1;
+            if (instrucao[0] == 'R')
+                direcao = 1;
 
-            if (instruction[0] == 'S')
+            if (instrucao[0] == 'S')
             {
-                const char *temp = instruction.c_str();
+                const char *temp = instrucao.c_str();
                 int value = atoi(temp+8);
-                direction = history[value-1];
+                direcao = historico[value-1];
             }
 
-            P += direction;
-            history[j] = direction;
+            P += direcao;
+            historico[j] = direcao;
         }
 
         cout << P << endl;
